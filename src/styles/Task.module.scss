@@ -1,0 +1,25 @@
+.task {
+  height: 40px;
+  border-bottom: 1px solid var(--color-outline);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  .subLength {
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-opacity-light);
+  }
+  svg {
+    transition: all 0.3s ease 0s;
+  }
+}
+
+.taskTitle {
+  font-size: 14px;
+}

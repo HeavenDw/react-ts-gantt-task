@@ -1,0 +1,103 @@
+.timeTable {
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: 24px 24px 1fr;
+  outline: 1px solid var(--color-outline);
+
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: -10px 0px 10px -2px var(--color-outline) inset;
+  }
+}
+
+.timeLines {
+  grid-column: 1/-1;
+  display: grid;
+  grid-auto-rows: 40px;
+  padding-left: 0.5px;
+}
+
+.ganttTimePeriod {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 22px;
+  grid-template-rows: 40px;
+  text-align: center;
+}
+
+.weekRow {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 154px;
+  background-color: var(--color-background-secondary);
+}
+
+.week {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  border-right: 1px solid var(--color-outline);
+}
+
+.dayRow {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 22px;
+  background-color: var(--color-background-secondary);
+}
+
+.day {
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid var(--color-outline);
+  border-top: 1px solid var(--color-outline);
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.ganttTimePeriodCell {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-right: 1px solid var(--color-outline);
+  }
+}
+
+.taskBar {
+  position: relative;
+  top: 50%;
+  transform: translate(0px, -50%);
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #497cf6;
+
+  .taskTitle {
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translate(100%, -50%);
+    z-index: 1;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
